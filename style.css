@@ -1,0 +1,89 @@
+/* Global styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #c4737b, #dd947d, #bf6d77, #e2a690);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
+    margin: 0;
+}
+
+/* Keyframes for the background gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Container for the dots */
+.background-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Ensure it's behind the card */
+}
+
+/* Styling for each dot */
+.dot {
+    position: absolute;
+    background-color: #f0e1da6e;
+    box-shadow: #f0e1da6e 0 0 10px; /* Soft shadow */
+    border-radius: 50%;
+    animation: floatAnimation linear infinite;
+}
+
+/* Keyframes for the floating animation */
+@keyframes floatAnimation {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(100px, -100px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Ensure the card appears above the dots */
+.card {
+    position: relative;
+    z-index: 1;
+    height: 40vh; /* Height is 40% of the viewport height */
+    width: calc(40vh * 5 / 3); /* Width is 5/3 of the height */
+    padding: 80px;
+    background-color: #444454;
+    border-radius: 30px;
+    box-shadow: 0 1px 40px rgba(0, 0, 0, 0.45);
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f0e1da;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Make text responsive */
+@media (min-width: 600px) {
+    .card {
+        font-size: 2.5em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        font-size: 3em;
+    }
+}
